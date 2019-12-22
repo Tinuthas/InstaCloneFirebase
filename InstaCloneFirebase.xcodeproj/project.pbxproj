@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,9 @@
 		83030AB023AF1052004A951F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83030AAF23AF1052004A951F /* Assets.xcassets */; };
 		83030AB323AF1052004A951F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83030AB123AF1052004A951F /* LaunchScreen.storyboard */; };
 		83030ABB23AF1357004A951F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 83030ABA23AF1357004A951F /* GoogleService-Info.plist */; };
+		83030ABD23AFC63D004A951F /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83030ABC23AFC63D004A951F /* FeedViewController.swift */; };
+		83030ABF23AFC650004A951F /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83030ABE23AFC650004A951F /* UploadViewController.swift */; };
+		83030AC123AFC65B004A951F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83030AC023AFC65B004A951F /* SettingsViewController.swift */; };
 		B324011824D55DE538BBA022 /* Pods_InstaCloneFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 644AB8F614E67F213B274817 /* Pods_InstaCloneFirebase.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +31,9 @@
 		83030AB223AF1052004A951F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83030AB423AF1052004A951F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		83030ABA23AF1357004A951F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		83030ABC23AFC63D004A951F /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		83030ABE23AFC650004A951F /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
+		83030AC023AFC65B004A951F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		944A0265E6FE8C4CEC814ECF /* Pods-InstaCloneFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaCloneFirebase.debug.xcconfig"; path = "Target Support Files/Pods-InstaCloneFirebase/Pods-InstaCloneFirebase.debug.xcconfig"; sourceTree = "<group>"; };
 		AC2B3A682D56B76E49541B00 /* Pods-InstaCloneFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaCloneFirebase.release.xcconfig"; path = "Target Support Files/Pods-InstaCloneFirebase/Pods-InstaCloneFirebase.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,6 +74,9 @@
 				83030AA623AF104D004A951F /* AppDelegate.swift */,
 				83030AA823AF104D004A951F /* SceneDelegate.swift */,
 				83030AAA23AF104D004A951F /* ViewController.swift */,
+				83030ABC23AFC63D004A951F /* FeedViewController.swift */,
+				83030ABE23AFC650004A951F /* UploadViewController.swift */,
+				83030AC023AFC65B004A951F /* SettingsViewController.swift */,
 				83030AAC23AF104D004A951F /* Main.storyboard */,
 				83030AAF23AF1052004A951F /* Assets.xcassets */,
 				83030AB123AF1052004A951F /* LaunchScreen.storyboard */,
@@ -83,7 +92,6 @@
 				944A0265E6FE8C4CEC814ECF /* Pods-InstaCloneFirebase.debug.xcconfig */,
 				AC2B3A682D56B76E49541B00 /* Pods-InstaCloneFirebase.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -212,8 +220,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				83030AAB23AF104D004A951F /* ViewController.swift in Sources */,
+				83030ABF23AFC650004A951F /* UploadViewController.swift in Sources */,
 				83030AA723AF104D004A951F /* AppDelegate.swift in Sources */,
+				83030ABD23AFC63D004A951F /* FeedViewController.swift in Sources */,
 				83030AA923AF104D004A951F /* SceneDelegate.swift in Sources */,
+				83030AC123AFC65B004A951F /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
