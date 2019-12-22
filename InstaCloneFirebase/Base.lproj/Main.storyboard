@@ -10,7 +10,7 @@
         <!--Upload-->
         <scene sceneID="6Jb-eh-LKi">
             <objects>
-                <viewController id="GDk-bL-J3j" sceneMemberID="viewController">
+                <viewController id="GDk-bL-J3j" customClass="UploadViewController" customModule="InstaCloneFirebase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Lmp-Mg-bpQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,11 +23,41 @@
             </objects>
             <point key="canvasLocation" x="-301" y="140"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="dNS-ZY-7su">
+            <objects>
+                <viewController id="hD6-Zp-G4m" customClass="SettingsViewController" customModule="InstaCloneFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O1T-Oj-MbC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NWb-lF-oCL">
+                                <rect key="frame" x="150" y="118" width="114" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutClicked:" destination="hD6-Zp-G4m" eventType="touchUpInside" id="RW0-6S-baM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="9ey-dO-Cbi"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="s.circle.fill" catalog="system" id="4HA-um-Wt9"/>
+                    <navigationItem key="navigationItem" id="o1c-em-yP2"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toViewController" modalPresentationStyle="fullScreen" id="x6J-j7-fi7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="diU-1d-vma" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-301.44927536231887" y="795.53571428571422"/>
+        </scene>
         <!--Feed-->
         <scene sceneID="fl5-nd-gyb">
             <objects>
-                <viewController id="yok-Ng-qoJ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4zD-Ji-DDb">
+                <viewController id="yok-Ng-qoJ" customClass="FeedViewController" customModule="InstaCloneFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4zD-Ji-DDb" customClass="Feed">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -52,6 +82,7 @@
                     <connections>
                         <segue destination="yok-Ng-qoJ" kind="relationship" relationship="viewControllers" id="hz5-O2-kQs"/>
                         <segue destination="GDk-bL-J3j" kind="relationship" relationship="viewControllers" id="cMD-Du-66O"/>
+                        <segue destination="hD6-Zp-G4m" kind="relationship" relationship="viewControllers" id="TSg-GE-dlU"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BGg-cc-AFE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -121,6 +152,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="yyW-DJ-cJV"/>
                     <connections>
                         <outlet property="emailText" destination="hu7-GQ-lJ6" id="zGN-ZB-52s"/>
                         <outlet property="passwordText" destination="6W1-ot-2OQ" id="WFo-OI-Y5p"/>
@@ -134,6 +166,7 @@
     </scenes>
     <resources>
         <image name="f.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="s.circle.fill" catalog="system" width="64" height="60"/>
         <image name="u.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
 </document>
