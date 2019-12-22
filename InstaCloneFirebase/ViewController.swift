@@ -17,11 +17,28 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+       
+        let currentUser = Auth.auth().currentUser
+        
+        if currentUser != nil {
+            self.performSegue(withIdentifier: "toFeedVC", sender: nil)
+        }
     }
 
     @IBAction func signInClicked(_ sender: Any) {
-        performSegue(withIdentifier: "toFeedVC", sender: nil)
+        //performSegue(withIdentifier: "toFeedVC", sender: nil)
+        if emailText.text != "" && passwordText.text != ""{
+            Auth.auth().signIn(withEmail: emailText.text!, password: passwordText.text!) { (authData, error) in
+                if error != nil {
+                     self.makeAlert(title: "Error!", message: error?.localizedDescription ?? "Error")
+                }else{
+                    self.performSegue(withIdentifier: "toFeedVC", sender: nil)
+                }
+            }
+        }else {
+            makeAlert(title: "Error", message: "Username/Password?")
+        }
+        
     }
     
     @IBAction func singUpClicked(_ sender: Any) {
