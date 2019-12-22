@@ -14,14 +14,51 @@
                     <view key="view" contentMode="scaleToFill" id="Lmp-Mg-bpQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="select" translatesAutoresizingMaskIntoConstraints="NO" id="Dgy-0t-r3o">
+                                <rect key="frame" x="40" y="94" width="334" height="275"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="275" id="aMn-e0-FwY"/>
+                                    <constraint firstAttribute="width" constant="334" id="aWS-wx-y6X"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="comment" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O2j-4v-Zra">
+                                <rect key="frame" x="40" y="419" width="334" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OEu-Ec-yqK">
+                                <rect key="frame" x="110" y="503" width="194" height="30"/>
+                                <state key="normal" title="Upload"/>
+                                <connections>
+                                    <action selector="actionButton:" destination="GDk-bL-J3j" eventType="touchUpInside" id="KU4-Ks-dXs"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Dgy-0t-r3o" firstAttribute="top" secondItem="XeU-Fh-xoJ" secondAttribute="top" constant="50" id="2Ba-yG-LNG"/>
+                            <constraint firstItem="O2j-4v-Zra" firstAttribute="top" secondItem="Dgy-0t-r3o" secondAttribute="bottom" constant="50" id="Gb0-PY-HFC"/>
+                            <constraint firstItem="OEu-Ec-yqK" firstAttribute="top" secondItem="O2j-4v-Zra" secondAttribute="bottom" constant="50" id="MQf-bF-Thg"/>
+                            <constraint firstItem="Dgy-0t-r3o" firstAttribute="leading" secondItem="XeU-Fh-xoJ" secondAttribute="leading" constant="40" id="QEO-eB-fWg"/>
+                            <constraint firstItem="XeU-Fh-xoJ" firstAttribute="trailing" secondItem="O2j-4v-Zra" secondAttribute="trailing" constant="40" id="Tpa-WZ-pDa"/>
+                            <constraint firstItem="OEu-Ec-yqK" firstAttribute="leading" secondItem="XeU-Fh-xoJ" secondAttribute="leading" constant="110" id="aai-RB-DTK"/>
+                            <constraint firstItem="XeU-Fh-xoJ" firstAttribute="trailing" secondItem="OEu-Ec-yqK" secondAttribute="trailing" constant="110" id="bs9-Wk-tj1"/>
+                            <constraint firstItem="O2j-4v-Zra" firstAttribute="leading" secondItem="XeU-Fh-xoJ" secondAttribute="leading" constant="40" id="fQt-yO-ss6"/>
+                            <constraint firstItem="XeU-Fh-xoJ" firstAttribute="trailing" secondItem="Dgy-0t-r3o" secondAttribute="trailing" constant="40" id="iZo-Ij-oFW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="XeU-Fh-xoJ"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Upload" image="u.circle.fill" catalog="system" id="T4K-IW-AFY"/>
+                    <connections>
+                        <outlet property="commentText" destination="O2j-4v-Zra" id="at8-Bq-wv6"/>
+                        <outlet property="imageView" destination="Dgy-0t-r3o" id="yF9-EY-81G"/>
+                        <outlet property="uploadButton" destination="OEu-Ec-yqK" id="Um1-nj-hiJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JGf-yS-M7v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-301" y="140"/>
+            <point key="canvasLocation" x="-301.44927536231887" y="139.95535714285714"/>
         </scene>
         <!--Settings-->
         <scene sceneID="dNS-ZY-7su">
@@ -167,6 +204,7 @@
     <resources>
         <image name="f.circle.fill" catalog="system" width="64" height="60"/>
         <image name="s.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="select" width="285" height="275"/>
         <image name="u.circle.fill" catalog="system" width="64" height="60"/>
     </resources>
 </document>
