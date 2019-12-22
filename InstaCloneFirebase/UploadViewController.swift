@@ -22,6 +22,13 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         imageView.addGestureRecognizer(gestureRecognizer)
     }
     
+    func makeAlert(title: String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        let okButton = UIAlertAction(title: "ok", style: UIAlertAction.Style.default, handler: nil)
+        alert.addAction(okButton)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     @IBAction func actionButton(_ sender: Any) {
         let storage = Storage.storage()
         let storageReference = storage.reference()
@@ -29,15 +36,18 @@ class UploadViewController: UIViewController, UIImagePickerControllerDelegate, U
         let mediaFolder = storageReference.child("media")
         
         if let data = imageView.image?.jpegData(compressionQuality: 0.5){
-            let imageReference = mediaFolder.child("image.jpg")
+            let uuid = UUID().uuidString
+            let imageReference = mediaFolder.child("\(uuid).jpg")
             imageReference.putData(data, metadata: nil) { (metadata, error) in
                 if error != nil {
-                    print(error?.localizedDescription)
+                    self.makeAlert(title: "Error!", message: error?.localizedDescription ?? "Error")
                 }else {
                     imageReference.downloadURL { (url, error) in
                         if error == nil {
                             let imageUrl = url?.absoluteString
-                            print(imageUrl)
+                            
+                            // DATABASE
+                            
                         }
                     }
                 }
