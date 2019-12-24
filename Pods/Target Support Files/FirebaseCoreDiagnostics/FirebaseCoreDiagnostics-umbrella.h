@@ -10,13 +10,7 @@
 #endif
 #endif
 
-#import "FIRCoreDiagnosticsDateFileStorage 2.h"
-#import "FIRCoreDiagnosticsDateFileStorage 3.h"
-#import "FIRCoreDiagnosticsDateFileStorage 4.h"
 #import "FIRCoreDiagnosticsDateFileStorage.h"
-#import "firebasecore.nanopb 2.h"
-#import "firebasecore.nanopb 3.h"
-#import "firebasecore.nanopb 4.h"
 #import "firebasecore.nanopb.h"
 
 FOUNDATION_EXPORT double FirebaseCoreDiagnosticsVersionNumber;
