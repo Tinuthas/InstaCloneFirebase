@@ -9,13 +9,15 @@
 import Foundation
 
 class FeedModel{
+    var id: String
     var date : String
     var imageUrl: String
     var likes: Int
     var postComment: String
     var postedBy: String
     
-    init(date: String, imageUrl: String, likes: Int, postComment: String, postedBy: String) {
+    init(id: String, date: String, imageUrl: String, likes: Int, postComment: String, postedBy: String) {
+        self.id = id
         self.date = date
         self.imageUrl = imageUrl
         self.likes = likes
