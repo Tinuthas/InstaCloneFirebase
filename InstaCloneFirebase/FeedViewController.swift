@@ -42,9 +42,9 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                                 if let likes = document.get("likes") as? Int {
                                     if let imageUrl = document.get("imageUrl") as? String {
                                          if let date = document.get("date") as? String {
-                                            self.feedArray.append(FeedModel(date: date , imageUrl: imageUrl, likes: likes, postComment: postComment, postedBy: postedBy))
+                                            self.feedArray.append(FeedModel(id: documentID, date: date , imageUrl: imageUrl, likes: likes, postComment: postComment, postedBy: postedBy))
                                          }else if let date = document.get("date") as? Timestamp {
-                                            self.feedArray.append(FeedModel(date: "\(date.dateValue())" , imageUrl: imageUrl, likes: likes, postComment: postComment, postedBy: postedBy))
+                                            self.feedArray.append(FeedModel(id: documentID, date: "\(date.dateValue())" , imageUrl: imageUrl, likes: likes, postComment: postComment, postedBy: postedBy))
                                         }
                                     }
                                 }
@@ -69,6 +69,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.useremailLabel.text = feedModel.postedBy
         cell.likeLabel.text = String(feedModel.likes)
         cell.commentLabel.text = feedModel.postComment
+        cell.documentIDLabel.text = feedModel.id
         cell.userImageView.sd_setImage(with: URL(string: feedModel.imageUrl))
         return cell
     }
