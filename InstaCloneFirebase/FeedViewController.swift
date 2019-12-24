@@ -7,29 +7,66 @@
 //
 
 import UIKit
+import Firebase
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    
-
+    var feedArray = [FeedModel]()
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
 
+        getDataFromFirebase()
         // Do any additional setup after loading the view.
     }
     
+    func getDataFromFirebase() {
+        let fireStoreDatabase = Firestore.firestore()
+        /*let settings = fireStoreDatabase.settings
+        settings.areTimestampsInSnapshotsEnabled = true
+        fireStoreDatabase.settings = settings*/
+        fireStoreDatabase.collection("Posts").addSnapshotListener { (snapshot, error) in
+            if error != nil {
+                print(error?.localizedDescription ?? "Error Database")
+            }else {
+                if snapshot != nil && snapshot?.isEmpty != true {
+                    for document in snapshot!.documents {
+                        let documentID = document.documentID
+                        //print(documentID)
+                        if let postedBy = document.get("postedBy") as? String{
+                            if let postComment = document.get("postComment") as? String {
+                                if let likes = document.get("likes") as? Int {
+                                    if let imageUrl = document.get("imageUrl") as? String {
+                                         if let date = document.get("date") as? String {
+                                            self.feedArray.append(FeedModel(date: date , imageUrl: imageUrl, likes: likes, postComment: postComment, postedBy: postedBy))
+                                         }else if let date = document.get("date") as? Timestamp {
+                                            self.feedArray.append(FeedModel(date: "\(date.dateValue())" , imageUrl: imageUrl, likes: likes, postComment: postComment, postedBy: postedBy))
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    self.tableView.reloadData()
+                }
+            }
+        }
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        print(feedArray.count)
+        return feedArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! FeedCell
-        cell.useremailLabel.text = "Test"
-        cell.likeLabel.text = "10"
-        cell.commentLabel.text = "my comment"
+        let feedModel = feedArray[indexPath.row]
+        cell.useremailLabel.text = feedModel.postedBy
+        cell.likeLabel.text = String(feedModel.likes)
+        cell.commentLabel.text = feedModel.postComment
         cell.userImageView.image = UIImage(named: "select.png")
         return cell
     }
