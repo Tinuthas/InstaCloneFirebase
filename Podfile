@@ -17,7 +17,15 @@ target 'InstaCloneFirebase' do
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
   pod 'SDWebImage'
+  pod 'OneSignal', '>= 2.11.2', '< 3.0'
+
+
+target 'OneSignalNotificationServiceExtension' do
+  pod 'OneSignal', '>= 2.11.2', '< 3.0'
+end
+
 
   # Pods for InstaCloneFirebase
 
 end
+
