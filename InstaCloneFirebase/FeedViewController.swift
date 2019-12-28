@@ -15,6 +15,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var feedArray = [FeedModel]()
     @IBOutlet weak var tableView: UITableView!
+    let fireStoreDatabase = Firestore.firestore()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -29,24 +31,44 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         let playerId = status.subscriptionStatus.userId
         
         if let playerNewId = playerId {
-            print("played ID : " + playerNewId)
-            
-            let firestoreReference = Firestore.firestore()
-            
-            let playerIdDictionary = ["email": Auth.auth().currentUser!.email, "player_id":playerNewId]
-            
-            firestoreReference.collection("PlayerId").addDocument(data: playerIdDictionary,completion: {(error) in
-                if error != nil {
-                    print(error?.localizedDescription ?? "Error")
+            fireStoreDatabase.collection("PlayerId").whereField("email", isEqualTo: Auth.auth().currentUser!.email).getDocuments { (snapshot, error) in
+                if error == nil {
+                    if snapshot?.isEmpty == false && snapshot != nil {
+                        for document in snapshot!.documents {
+                            if let playerIdFromFirebase = document.get("player_id") as? String {
+                                print("playerIDFromFirebase: " + playerIdFromFirebase)
+                                let documentID = document.documentID
+                                 if playerNewId != playerIdFromFirebase {
+                                    self.createPlayerID(playerNewId: playerNewId)
+                                }
+                                
+                               
+                            }
+                        }
+                    }else {
+                        self.createPlayerID(playerNewId: playerNewId)
+                    }
                 }
-            })
+            }
+            
+            //print("played ID : " + playerNewId)
+            
+            
         }
         
         
     }
     
+    func createPlayerID(playerNewId: String){
+        let playerIdDictionary = ["email": Auth.auth().currentUser!.email, "player_id":playerNewId]
+              fireStoreDatabase.collection("PlayerId").addDocument(data: playerIdDictionary,completion: {(error) in
+              if error != nil {
+                    print(error?.localizedDescription ?? "Error")
+              }
+         })
+    }
+    
     func getDataFromFirebase() {
-        let fireStoreDatabase = Firestore.firestore()
         /*let settings = fireStoreDatabase.settings
         settings.areTimestampsInSnapshotsEnabled = true
         fireStoreDatabase.settings = settings*/
