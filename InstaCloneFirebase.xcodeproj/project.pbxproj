@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,11 +20,39 @@
 		83030AC323B25E90004A951F /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83030AC223B25E90004A951F /* FeedCell.swift */; };
 		83030AC523B265E0004A951F /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83030AC423B265E0004A951F /* FeedModel.swift */; };
 		83030AC723B2ADBF004A951F /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83030AC623B2ADBF004A951F /* SDWebImage.framework */; };
-		B9C722C9744E0DB0B97C7E4A /* Pods_InstaCloneFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 194150DABD03F41F7266FE61 /* Pods_InstaCloneFirebase.framework */; };
+		83030ACF23B6DC0C004A951F /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83030ACE23B6DC0C004A951F /* NotificationService.swift */; };
+		83030AD323B6DC0C004A951F /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 83030ACC23B6DC0C004A951F /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9E665DDEEC9F302F568199BE /* Pods_InstaCloneFirebase_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD38B47B59F25CA38CB4CC94 /* Pods_InstaCloneFirebase_OneSignalNotificationServiceExtension.framework */; };
+		DDF930D72F204CC9C9112917 /* Pods_InstaCloneFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507132AEA29BF8E3BD1EAC92 /* Pods_InstaCloneFirebase.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		83030AD123B6DC0C004A951F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83030A9B23AF104D004A951F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 83030ACB23B6DC0C004A951F;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		83030AD423B6DC0C004A951F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				83030AD323B6DC0C004A951F /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		194150DABD03F41F7266FE61 /* Pods_InstaCloneFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaCloneFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1550BEAEFAC73208F48AD5AB /* Pods-InstaCloneFirebase-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaCloneFirebase-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-InstaCloneFirebase-OneSignalNotificationServiceExtension/Pods-InstaCloneFirebase-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
+		507132AEA29BF8E3BD1EAC92 /* Pods_InstaCloneFirebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaCloneFirebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83030AA323AF104D004A951F /* InstaCloneFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaCloneFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83030AA623AF104D004A951F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83030AA823AF104D004A951F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,8 +68,13 @@
 		83030AC223B25E90004A951F /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		83030AC423B265E0004A951F /* FeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
 		83030AC623B2ADBF004A951F /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D293B2A6D97130B9D932CD7F /* Pods-InstaCloneFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaCloneFirebase.debug.xcconfig"; path = "Target Support Files/Pods-InstaCloneFirebase/Pods-InstaCloneFirebase.debug.xcconfig"; sourceTree = "<group>"; };
-		E3C850CB89368B32AB54D539 /* Pods-InstaCloneFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaCloneFirebase.release.xcconfig"; path = "Target Support Files/Pods-InstaCloneFirebase/Pods-InstaCloneFirebase.release.xcconfig"; sourceTree = "<group>"; };
+		83030ACC23B6DC0C004A951F /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		83030ACE23B6DC0C004A951F /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		83030AD023B6DC0C004A951F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A748C83F9716D6B502079CA7 /* Pods-InstaCloneFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaCloneFirebase.release.xcconfig"; path = "Target Support Files/Pods-InstaCloneFirebase/Pods-InstaCloneFirebase.release.xcconfig"; sourceTree = "<group>"; };
+		AB9C9BBC33ACF7D981BD717A /* Pods-InstaCloneFirebase-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaCloneFirebase-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-InstaCloneFirebase-OneSignalNotificationServiceExtension/Pods-InstaCloneFirebase-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		E58A8FFDE583CCF2B07F07DE /* Pods-InstaCloneFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaCloneFirebase.debug.xcconfig"; path = "Target Support Files/Pods-InstaCloneFirebase/Pods-InstaCloneFirebase.debug.xcconfig"; sourceTree = "<group>"; };
+		FD38B47B59F25CA38CB4CC94 /* Pods_InstaCloneFirebase_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaCloneFirebase_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +83,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				83030AC723B2ADBF004A951F /* SDWebImage.framework in Frameworks */,
-				B9C722C9744E0DB0B97C7E4A /* Pods_InstaCloneFirebase.framework in Frameworks */,
+				DDF930D72F204CC9C9112917 /* Pods_InstaCloneFirebase.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83030AC923B6DC0C004A951F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E665DDEEC9F302F568199BE /* Pods_InstaCloneFirebase_OneSignalNotificationServiceExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				83030AA523AF104D004A951F /* InstaCloneFirebase */,
+				83030ACD23B6DC0C004A951F /* OneSignalNotificationServiceExtension */,
 				83030AA423AF104D004A951F /* Products */,
 				A99CA4C0E9D390CCFC70D6C2 /* Pods */,
 				CF5FD6F460FB02E80523076A /* Frameworks */,
@@ -71,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				83030AA323AF104D004A951F /* InstaCloneFirebase.app */,
+				83030ACC23B6DC0C004A951F /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,11 +138,22 @@
 			path = InstaCloneFirebase;
 			sourceTree = "<group>";
 		};
+		83030ACD23B6DC0C004A951F /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				83030ACE23B6DC0C004A951F /* NotificationService.swift */,
+				83030AD023B6DC0C004A951F /* Info.plist */,
+			);
+			path = OneSignalNotificationServiceExtension;
+			sourceTree = "<group>";
+		};
 		A99CA4C0E9D390CCFC70D6C2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D293B2A6D97130B9D932CD7F /* Pods-InstaCloneFirebase.debug.xcconfig */,
-				E3C850CB89368B32AB54D539 /* Pods-InstaCloneFirebase.release.xcconfig */,
+				E58A8FFDE583CCF2B07F07DE /* Pods-InstaCloneFirebase.debug.xcconfig */,
+				A748C83F9716D6B502079CA7 /* Pods-InstaCloneFirebase.release.xcconfig */,
+				AB9C9BBC33ACF7D981BD717A /* Pods-InstaCloneFirebase-OneSignalNotificationServiceExtension.debug.xcconfig */,
+				1550BEAEFAC73208F48AD5AB /* Pods-InstaCloneFirebase-OneSignalNotificationServiceExtension.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -108,7 +162,8 @@
 			isa = PBXGroup;
 			children = (
 				83030AC623B2ADBF004A951F /* SDWebImage.framework */,
-				194150DABD03F41F7266FE61 /* Pods_InstaCloneFirebase.framework */,
+				507132AEA29BF8E3BD1EAC92 /* Pods_InstaCloneFirebase.framework */,
+				FD38B47B59F25CA38CB4CC94 /* Pods_InstaCloneFirebase_OneSignalNotificationServiceExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -120,20 +175,40 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 83030AB723AF1052004A951F /* Build configuration list for PBXNativeTarget "InstaCloneFirebase" */;
 			buildPhases = (
-				B4EB9A686561B2FB04196878 /* [CP] Check Pods Manifest.lock */,
+				37D4605D8B1EAE26A640B2C1 /* [CP] Check Pods Manifest.lock */,
 				83030A9F23AF104D004A951F /* Sources */,
 				83030AA023AF104D004A951F /* Frameworks */,
 				83030AA123AF104D004A951F /* Resources */,
-				071946267F12A9C9A77A95A1 /* [CP] Embed Pods Frameworks */,
+				83030AD423B6DC0C004A951F /* Embed App Extensions */,
+				9A199DB9AAE14B94EA43679C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				83030AD223B6DC0C004A951F /* PBXTargetDependency */,
 			);
 			name = InstaCloneFirebase;
 			productName = InstaCloneFirebase;
 			productReference = 83030AA323AF104D004A951F /* InstaCloneFirebase.app */;
 			productType = "com.apple.product-type.application";
+		};
+		83030ACB23B6DC0C004A951F /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83030AD723B6DC0C004A951F /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				EF50ED87BF45D32BB0258472 /* [CP] Check Pods Manifest.lock */,
+				83030AC823B6DC0C004A951F /* Sources */,
+				83030AC923B6DC0C004A951F /* Frameworks */,
+				83030ACA23B6DC0C004A951F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneSignalNotificationServiceExtension;
+			productName = OneSignalNotificationServiceExtension;
+			productReference = 83030ACC23B6DC0C004A951F /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -146,6 +221,9 @@
 				ORGANIZATIONNAME = "Marcus Vinicius Galdino Medeiros";
 				TargetAttributes = {
 					83030AA223AF104D004A951F = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					83030ACB23B6DC0C004A951F = {
 						CreatedOnToolsVersion = 11.3;
 					};
 				};
@@ -164,6 +242,7 @@
 			projectRoot = "";
 			targets = (
 				83030AA223AF104D004A951F /* InstaCloneFirebase */,
+				83030ACB23B6DC0C004A951F /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -180,10 +259,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		83030ACA23B6DC0C004A951F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		071946267F12A9C9A77A95A1 /* [CP] Embed Pods Frameworks */ = {
+		37D4605D8B1EAE26A640B2C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InstaCloneFirebase-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A199DB9AAE14B94EA43679C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -200,7 +308,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-InstaCloneFirebase/Pods-InstaCloneFirebase-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B4EB9A686561B2FB04196878 /* [CP] Check Pods Manifest.lock */ = {
+		EF50ED87BF45D32BB0258472 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -215,7 +323,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-InstaCloneFirebase-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-InstaCloneFirebase-OneSignalNotificationServiceExtension-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -240,7 +348,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		83030AC823B6DC0C004A951F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83030ACF23B6DC0C004A951F /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		83030AD223B6DC0C004A951F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 83030ACB23B6DC0C004A951F /* OneSignalNotificationServiceExtension */;
+			targetProxy = 83030AD123B6DC0C004A951F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		83030AAC23AF104D004A951F /* Main.storyboard */ = {
@@ -378,8 +502,9 @@
 		};
 		83030AB823AF1052004A951F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D293B2A6D97130B9D932CD7F /* Pods-InstaCloneFirebase.debug.xcconfig */;
+			baseConfigurationReference = E58A8FFDE583CCF2B07F07DE /* Pods-InstaCloneFirebase.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6CJNM8AMYQ;
@@ -397,8 +522,9 @@
 		};
 		83030AB923AF1052004A951F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E3C850CB89368B32AB54D539 /* Pods-InstaCloneFirebase.release.xcconfig */;
+			baseConfigurationReference = A748C83F9716D6B502079CA7 /* Pods-InstaCloneFirebase.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6CJNM8AMYQ;
@@ -409,6 +535,46 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tinuthas.InstaCloneFirebase;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		83030AD523B6DC0C004A951F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB9C9BBC33ACF7D981BD717A /* Pods-InstaCloneFirebase-OneSignalNotificationServiceExtension.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6CJNM8AMYQ;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tinuthas.InstaCloneFirebase.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		83030AD623B6DC0C004A951F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1550BEAEFAC73208F48AD5AB /* Pods-InstaCloneFirebase-OneSignalNotificationServiceExtension.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6CJNM8AMYQ;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tinuthas.InstaCloneFirebase.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -431,6 +597,15 @@
 			buildConfigurations = (
 				83030AB823AF1052004A951F /* Debug */,
 				83030AB923AF1052004A951F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83030AD723B6DC0C004A951F /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83030AD523B6DC0C004A951F /* Debug */,
+				83030AD623B6DC0C004A951F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

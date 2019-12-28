@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import SDWebImage
+import OneSignal
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -20,7 +21,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self
 
         getDataFromFirebase()
-        // Do any additional setup after loading the view.
+        
+        OneSignal.postNotification(["contents":["en":"Test Message"], "include-player-ids": ["23452-32323232-32323-232323-23233232"]])
+        
+        
     }
     
     func getDataFromFirebase() {
