@@ -21,8 +21,26 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self
 
         getDataFromFirebase()
+        //SEND MANUAL NOTIFICATION TO PLAYED ID
+        //OneSignal.postNotification(["contents":["en":"Test Message"], "include-player-ids": ["23452-32323232-32323-232323-23233232"]])
         
-        OneSignal.postNotification(["contents":["en":"Test Message"], "include-player-ids": ["23452-32323232-32323-232323-23233232"]])
+        let status : OSPermissionSubscriptionState = OneSignal.getPermissionSubscriptionState()
+        
+        let playerId = status.subscriptionStatus.userId
+        
+        if let playerNewId = playerId {
+            print("played ID : " + playerNewId)
+            
+            let firestoreReference = Firestore.firestore()
+            
+            let playerIdDictionary = ["email": Auth.auth().currentUser!.email, "player_id":playerNewId]
+            
+            firestoreReference.collection("PlayerId").addDocument(data: playerIdDictionary,completion: {(error) in
+                if error != nil {
+                    print(error?.localizedDescription ?? "Error")
+                }
+            })
+        }
         
         
     }
